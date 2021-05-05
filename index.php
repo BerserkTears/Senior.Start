@@ -6,7 +6,7 @@
 </head>
 <body>
     <a href="login.php">Вход</a>
-    <a href="userregistrater.php">Регистрация</a>
+    <a href="userregister.php">Регистрация</a>
     <a href="cregistration.php">Регистрация компании</a>
 </body>
 </html>

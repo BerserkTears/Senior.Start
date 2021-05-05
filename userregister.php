@@ -27,7 +27,7 @@ if (isset($data['do_reg'])){
     <title>Регистрация</title>
 </head>
 <body>
-    <form action="/registration.php" method="POST"> 
+    <form action="/userregister.php" method="POST"> 
         <input type="text" name="name" required placeholder = "Имя">
         <input type="text" name="surname" required placeholder = "Фамилия">
         <input type="email" name="login" value= "<?php echo @$data['login'] ?>" required placeholder = "Логин(почта)"> 
