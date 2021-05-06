@@ -8,34 +8,6 @@ $data=$_POST;
 //}
 ?>
 
-<!-- 
-                    <?php 
-                      if ($_SESSION['logged_user']->company == "none"){
-                            echo $_SESSION['logged_user']->name;
-                        } else {
-                            echo $_SESSION['logged_user']->company;
-                        }
-                    ?>
-
-                    <h4 class=" mb-20">Информация о Вас,</h4>
-                    <?php 
-                      if(empty($_SESSION['logged_user']->user_answer1)){
-                        echo '<a href="anketa.php">Пройдите анкету чтобы узнать свои навыки</a>';
-                    } else {
-                        echo "Вам подходит";
-                        }
-                      ?>
-                    <a href="logout.php">Выйти</a>
-                      
-              <?php if ($_SESSION['logged_user']->company == "none"): ?>
-                <a href="/find.php" class="button button-lg radius-30 ml-20">Все вакансии</a>
-              <?php else:?>
-                <a href="/testcreation.php" class="button button-lg radius-30 ml-20">Редактировать тест</a>
-                <a href="/userresults.php" class="button button-lg radius-30 ml-20">Результаты заявок</a>
-              <?php endif; ?>
- -->
-
-
 <?php if($_SESSION['logged_user']->company == "none"): ?>
 <html lang="ru">
   <head>
@@ -206,7 +178,8 @@ $data=$_POST;
 
 <?php else:?>
 
-  <!DOCTYPE html>
+<?php $tt = R::findOne('tests','name = ?', array($_SESSION['logged_user']->inn));
+?>
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
@@ -282,7 +255,7 @@ $data=$_POST;
                         
                         
                         <h5 align="center" class="pb-30"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot svgg svgblue" viewBox="0 0 16 16">
-                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg><a  href="#0">  Создать вакансию</a></h5>
+                          <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg><a  href="testcreation.php"><?php if(empty($tt)){echo "Создать тест";} else {echo"Редактировать тест";}?>  </a></h5>
                         
                       </div>
                   </div>
@@ -295,24 +268,11 @@ $data=$_POST;
                 <h4 class="pb-50">Открытые вакансии</h4>
                 <div class="row justify-content-between">
                   <div class="col-lg-3 compblock pb-20 pt-10" align="center">
-                    <h5 class="colortest pt-10 pb-10">Тестировщик ПО</h5>
-                    <h4 class="col-lg-12 text-center pt-30 sber1 pb-10"><a  href="#0">Таблица лидеров</a></h4>
+                    <h5 class="colortest pt-10 pb-10"><?php echo $tt->prof;?></h5>
+                    <h4 class="col-lg-12 text-center pt-30 sber1 pb-10"><a  href="userresults.php">Таблица лидеров</a></h4>
                     <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Время собеседований</a></h4>
                     <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Закрыть вакансию</a></h4>
-                  </div>
-                  <div class="col-lg-3 compblock pb-20 pt-10" align="center">
-                    <h5 class="colortest pt-10 pb-10">Тестировщик ПО</h5>
-                    <h4 class="col-lg-12 text-center pt-30 sber1 pb-10"><a  href="#0">Таблица лидеров</a></h4>
-                    <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Время собеседований</a></h4>
-                    <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Закрыть вакансию</a></h4>
-                  </div>
-                  <div class="col-lg-3 compblock pb-20 pt-10" align="center">
-                    <h5 class="colortest pt-10 pb-10">Тестировщик ПО</h5>
-                    <h4 class="col-lg-12 text-center pt-30 sber1 pb-10"><a  href="#0">Таблица лидеров</a></h4>
-                    <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Время собеседований</a></h4>
-                    <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Закрыть вакансию</a></h4>
-                  </div>
-                  
+                  </div>   
                 </div>
               </div>
             </div>
