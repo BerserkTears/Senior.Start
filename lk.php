@@ -105,35 +105,35 @@ $data=$_POST;
                   <h4 class="col-lg-6 "> Природа</h4>
                   <div class="col-lg-6 pt-10 pb-40">
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer1)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (($_SESSION['logged_user']->user_answer1)/8*100)  ?>%</div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer1)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer1)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
                   <h4 class="col-lg-6 "> Техника</h4>
                   <div class="col-lg-6 pt-10 pb-40">
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer2)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (($_SESSION['logged_user']->user_answer2)/8*100)  ?>%</div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer2)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer2)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
                   <h4 class="col-lg-6 "> Общение</h4>
                   <div class="col-lg-6 pt-10 pb-40">
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer3)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (($_SESSION['logged_user']->user_answer3)/8*100)  ?>%</div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer3)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer3)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
                   <h4 class="col-lg-6 "> Вычисления</h4>
                   <div class="col-lg-6 pt-10 pb-40">
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer4)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (($_SESSION['logged_user']->user_answer4)/8*100)  ?>%</div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer4)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer4)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
                   <h4 class="col-lg-6 ">Творчество</h4>
                   <div class="col-lg-6 pt-10 pb-40">
                     <div class="progress">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer5)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (($_SESSION['logged_user']->user_answer5)/8*100)  ?>%</div>
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer5)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer5)/8*100))  ?>%</div>
                     </div>
                   </div>
                   <?php 
