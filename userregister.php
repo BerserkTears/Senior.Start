@@ -11,6 +11,7 @@ if (isset($data['do_reg'])){
             $user -> name = $data['name'];
             $user -> surname = $data['surname'];
             $user -> company = "none";
+            $user->tel = $data['tel'];
             R::store($user);
             $_SESSION['logged_user'] = $user;
             header('Location: /lk.php');
@@ -56,7 +57,7 @@ if (isset($data['do_reg'])){
                   <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent4">
                     <ul id="nav4" class="navbar-nav ml-auto">
                       <li class="nav-item">
-                        <a class="page-scroll" href="#0">Вход</a>
+                        <a class="page-scroll" href="login.php">Вход</a>
                       </li>
                       
                     </ul>
@@ -116,6 +117,7 @@ if (isset($data['do_reg'])){
                     </div>
                     <div class="col-md-6">
                       <div class="single-input">
+                         <label for="sername">Подтвердите пароль</label>
                         <input type="password" id="sername1" name="password1" class="form-input" placeholder="Подтвердите ваш пароль" required>
                       </div>
                     </div>
@@ -134,7 +136,7 @@ if (isset($data['do_reg'])){
                     </div>
                     <div class="col-md-12" align="center">
                       <div class="form-button">
-                        <button type="submit" class="button radius-30 submr" name = "do_reg">Создать анкету</button>
+                        <button type="submit" class="button radius-30 submr" name = "do_reg">Зарегистрироваться</button>
                       </div>
                     </div>
                   </div>

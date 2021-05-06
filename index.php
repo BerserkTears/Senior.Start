@@ -21,6 +21,11 @@
       background-image: url('assets/img/backgr.png');
   
   }
+  .sber3 a{
+
+color: #D9B71F;
+
+}
     </style>
   </head>
 
