@@ -22,7 +22,7 @@ if (isset($data['do_log'])) {
     <title>Senior.Start</title>
 </head>
 <body>
-    <form action="/userlogin.php" class="signup-form pt-50 pl-50 pr-50 pb-50" method='POST'>
+    <form action="/login.php" class="signup-form pt-50 pl-50 pr-50 pb-50" method='POST'>
         <label for="login">Логин</label>
         <input type="text" id="login" name="login" placeholder="Ваш логин" required>
         <label for="password">Пароль</label>

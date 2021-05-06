@@ -26,18 +26,16 @@ $data=$_POST;
                   </h2>
                     <h4 class=" mb-20">Информация о Вас,</h4>
                     <?php 
-                      $rabs = R::find('ratings','user_id = ?', array($_SESSION['logged_user']->id));
-                        asort($rabs, $rab->score);
-                      foreach ($rabs as $rab){
-                        $rab->name = R::findOne('users','inn = ?',array($rab->company));
-                      echo '
-                          <h4 ">Тест компании '.$rab->name->company.' </h4>
-                          <h4 >Счёт: '.$rab->score.'</h4>';
-                      }
+                      if(empty($_SESSION['logged_user']->user_answer1)){
+                        echo '<a href="anketa.php">Пройдите анкету чтобы узнать свои навыки</a>';
+                    } else {
+                        echo "Вам подходит";
+                        }
                       ?>
-            
+                    <a href="logout.php">Выйти</a>
+                      
               <?php if ($_SESSION['logged_user']->company == "none"): ?>
-                <a href="/find.php" class="button button-lg radius-30 ml-20">Подать заявку</a>
+                <a href="/find.php" class="button button-lg radius-30 ml-20">Все вакансии</a>
               <?php else:?>
                 <a href="/testcreation.php" class="button button-lg radius-30 ml-20">Редактировать тест</a>
                 <a href="/userresults.php" class="button button-lg radius-30 ml-20">Результаты заявок</a>

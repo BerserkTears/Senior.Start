@@ -35,7 +35,7 @@ if (isset($data['do_reg'])) {
 
 <body>
     <h3>Регистрация</h3>
-    <form action="/companyregister.php" method="POST">
+    <form action="/cregistration.php" method="POST">
 
         <label for="name">Имя</label>
         <input required type="text" id="name" name="name" class="form-input" placeholder="Введите ваше имя">
