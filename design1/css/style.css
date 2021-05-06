@@ -29,13 +29,13 @@ body {
 
 .hero-content-wrapper h2 {
   font-family: 'Cormorant';
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   color: #1A1D32;
 }
 
 .indexbutt {
   color: #1A1D32;
-  background-color: #b3b3bb;
+  background-color: #F2F2FF;
   width: 205px;
   height: 50px;
 }
@@ -94,7 +94,7 @@ body {
 
 #contact {
   height: 100vh;
-  background-image: url("../assets/img/userreg.png");
+  background-image: url("../assets/img/reg.png");
 }
 
 .formregigster {
@@ -235,4 +235,15 @@ img {
 .lead {
   line-height: 35px;
   font-weight: normal;
+}
+
+.wh {
+  color: #FFFFFF;
+}
+
+.form-check-label {
+  font-size: 18px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
 }
