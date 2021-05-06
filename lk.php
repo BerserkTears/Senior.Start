@@ -15,7 +15,7 @@ $data=$_POST;
   </head>
   <body>
                   <h4>Здравствуйте,</h4>
-                  <h2 class="mb-25">
+                  <h2>
                     <?php 
                       if ($_SESSION['logged_user']->company == "none"){
                             echo $_SESSION['logged_user']->name;
