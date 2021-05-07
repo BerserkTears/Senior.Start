@@ -30,6 +30,11 @@ $data=$_POST;
       #about, body,html{
         background-image: url('assets/img/6.png');
       }
+      btnn{
+        background-color: none;
+        border-color: none;
+      }
+
     </style>
   </head>
   <body>
@@ -39,7 +44,7 @@ $data=$_POST;
             <div class="row align-items-center">
               <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="index.html">
+                  <a class="navbar-brand" href="index.php">
                     <img src="assets/img/logo.png" alt="" />
                   </a>
 
@@ -72,38 +77,87 @@ $data=$_POST;
                   <h2 class="mb-25"><?php echo $_SESSION['logged_user']->name; ?></h2>
                 </div>
                 <div class="section-title mb-40 pt-50 pl-50 pr-50 pb-40 hello">
-                  <h3 align="center" class="pb-30">Ваши навыки</h3>
+                  <h3 align="center" class="pb-30">Ваши склонности</h3>
                   <div class="row">
-                  <h4 class="col-lg-6 "> Природа</h4>
-                  <div class="col-lg-6 pt-10 pb-40">
+                    <div class="col-lg-7">
+                  <form action="find.php" style:"border: 0" method="POST">
+                      <div class="form-group">
+                    <button type="sumbit" class="btnn button" style:"border-radius:10px;" name="proftype" value="1">
+                     <h4 style="font-size: 23px !important; width: 140px;">
+                        Природа
+                     </h4>
+                    </button>
+                    </div>
+                  </form>
+                  </div>
+                  <div class="col-lg-5 pt-10 pb-40">
                     <div class="progress">
                       <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer1)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer1)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
-                  <h4 class="col-lg-6 "> Техника</h4>
-                  <div class="col-lg-6 pt-10 pb-40">
+                  <div class="col-lg-7">
+                    <form action="find.php" style:"border: 0" method="POST">
+                        <div class="form-group">
+                      <button type="sumbit" class="btnn button" style:"border-radius:10px;" name="proftype" value="2">
+                      <h4 style="font-size: 23px !important; width: 140px;">
+                          Техника
+                      </h4>
+                      </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-lg-5 pt-10 pb-40">
                     <div class="progress">
                       <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer2)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer2)/8*100))  ?>%</div>
-                    </div>
-                    
+                    </div> 
                   </div>
-                  <h4 class="col-lg-6 "> Общение</h4>
-                  <div class="col-lg-6 pt-10 pb-40">
+                  <div class="col-lg-7">
+                    <form action="find.php" style:"border: 0" method="POST">
+                        <div class="form-group">
+                      <button type="sumbit" class="btnn button" style:"border-radius:10px;" name="proftype" value="3">
+                      <h4 style="font-size: 23px !important; width: 140px;">
+                          Общение
+                      </h4>
+                      </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-lg-5 pt-10 pb-40">
                     <div class="progress">
                       <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer3)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer3)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
-                  <h4 class="col-lg-6 "> Вычисления</h4>
-                  <div class="col-lg-6 pt-10 pb-40">
+                  <div class="col-lg-7">
+                    <form action="find.php" style:"border: 0" method="POST">
+                        <div class="form-group">
+                      <button type="sumbit" class="btnn button" style:"border-radius:10px;" name="proftype" value="4">
+                      <h4 style="font-size: 23px !important; width: 140px;">
+                          Вычисления
+                      </h4>
+                      </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-lg-5 pt-10 pb-40">
                     <div class="progress">
                       <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer4)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer4)/8*100))  ?>%</div>
                     </div>
                     
                   </div>
-                  <h4 class="col-lg-6 ">Творчество</h4>
-                  <div class="col-lg-6 pt-10 pb-40">
+                  <div class="col-lg-7">
+                  <form action="find.php" style:"border: 0" method="POST">
+                      <div class="form-group">
+                    <button type="sumbit" class="btnn button" style:"border-radius:10px;" name="proftype" value="5">
+                     <h4 style="font-size: 23px !important; width: 140px;">
+                        Творчество
+                     </h4>
+                    </button>
+                    </div>
+                  </form>
+                  </div>
+                  <div class="col-lg-5 pt-10 pb-40">
                     <div class="progress">
                       <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo (($_SESSION['logged_user']->user_answer5)/8*100)  ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><?php echo (round(($_SESSION['logged_user']->user_answer5)/8*100))  ?>%</div>
                     </div>
@@ -210,7 +264,7 @@ $data=$_POST;
             <div class="row align-items-center">
               <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="index.html">
+                  <a class="navbar-brand" href="index.php">
                     <img src="assets/img/logo.png" alt="" />
                   </a>
 
@@ -267,12 +321,14 @@ $data=$_POST;
               <div class="section-title mb-40 pt-50 pl-50 pr-50 pb-40 hello">
                 <h4 class="pb-50">Открытые вакансии</h4>
                 <div class="row justify-content-between">
+                  <?php if (isset($tt)):?>
                   <div class="col-lg-3 compblock pb-20 pt-10" align="center">
                     <h5 class="colortest pt-10 pb-10"><?php echo $tt->prof;?></h5>
                     <h4 class="col-lg-12 text-center pt-30 sber1 pb-10"><a  href="userresults.php">Таблица лидеров</a></h4>
                     <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Время собеседований</a></h4>
                     <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Закрыть вакансию</a></h4>
-                  </div>   
+                  </div> 
+                  <?php endif;?>  
                 </div>
               </div>
             </div>

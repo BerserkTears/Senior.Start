@@ -5,6 +5,7 @@ $test = R::findOne('tests', 'name = ?', array($_SESSION['logged_user']->inn));
 if (isset($data['plus'])) {
   $test->kol = $test->kol + 1;
   $test->prof = $data['prof'];
+  $test->proftype = $data['proftype'];
   for ($i = 1; $i <= $test['kol']; $i++) {
     $test['question' . $i] = $data['question' . $i];
     $test['answer' . $i] = $data['answer' . $i];
@@ -15,6 +16,7 @@ if (isset($data['plus'])) {
 if (isset($data['minus'])) {
   $test->kol = $test->kol - 1;
   $test->prof = $data['prof'];
+  $test->proftype = $data['proftype'];
   for ($i = 1; $i <= $test['kol']; $i++) {
     $test['question' . $i] = $data['question' . $i];
     $test['answer' . $i] = $data['answer' . $i];
@@ -24,6 +26,7 @@ if (isset($data['minus'])) {
 }
 if ((isset($data['save'])) or (isset($data['lk']))) {
   $test->prof = $data['prof'];
+  $test->proftype = $data['proftype'];
   for ($i = 1; $i <= $test['kol']; $i++) {
     $test['question' . $i] = $data['question' . $i];
     $test['answer' . $i] = $data['answer' . $i];
@@ -58,7 +61,9 @@ if (isset($data['lk'])) {
     .section-title {
       background: none;
     }
-
+    .select1{
+      background-color:#EFEFEF ;
+    }
     .contact-section {
       overflow: visible;
     }
@@ -80,13 +85,25 @@ if (isset($data['lk'])) {
             </div>
           </div>
 
-          <div class="contact-form-wrapper">
+          <div class="contact-form-wrapper pt-20 pl-20 pr-20 pb-20" style = "background:white; border-radius:20px;">
             <form action="testcreation.php" method="POST">
               <div class="row">
                 <div class="col-md-9">
                   <div class="single-input">
                     <label for="question">Название профессии</label>
                     <input type="text" id="question" name="prof" class="form-input" placeholder="Введите вопрос" value="<?php echo $test['prof']; ?>">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="single-input">
+                    <label for="question">С чем связано?</label>
+                    <select id="question" class="form-control select1" name="proftype">
+                      <option selected value="1">Природа</option>
+                      <option value="2">Техника</option>
+                      <option value="3">Общение</option>
+                      <option value="4">Вычисления</option>
+                      <option value="5">Творчество</option>
+                    </select>
                   </div>
                 </div>
                 <?php for ($i = 1; $i <= $test['kol']; $i++) {

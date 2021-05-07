@@ -38,7 +38,7 @@ color: #D9B71F;
             <div class="row align-items-center">
               <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="index.html">
+                  <a class="navbar-brand" href="index.php">
                     <img src="assets/img/logo.png" alt="" />
                   </a>
                 </nav>
