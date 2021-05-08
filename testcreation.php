@@ -98,11 +98,11 @@ if (isset($data['lk'])) {
                   <div class="single-input">
                     <label for="question">С чем связано?</label>
                     <select id="question" class="form-control select1" name="proftype">
-                      <option selected value="1">Природа</option>
-                      <option value="2">Техника</option>
-                      <option value="3">Общение</option>
-                      <option value="4">Вычисления</option>
-                      <option value="5">Творчество</option>
+                      <option <?php if($data['proftype']=='1'){echo "selected";}?> value="1">Природа</option>
+                      <option <?php if($data['proftype']=='2'){echo "selected";}?> value="2">Техника</option>
+                      <option <?php if($data['proftype']=='3'){echo "selected";}?> value="3">Общение</option>
+                      <option <?php if($data['proftype']=='4'){echo "selected";}?> value="4">Вычисления</option>
+                      <option <?php if($data['proftype']=='5'){echo "selected";}?> value="5">Творчество</option>
                     </select>
                   </div>
                 </div>

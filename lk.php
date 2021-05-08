@@ -6,6 +6,7 @@ $data=$_POST;
 //} else {
 //    echo $_SESSION['logged_user']->company , ", zdravstvu'te!";
 //}
+$sobs=R::find('sobesedovaniya', 'user = ?',array($_SESSION['logged_user']->id));
 ?>
 
 <?php if($_SESSION['logged_user']->company == "none"): ?>
@@ -178,31 +179,20 @@ $data=$_POST;
                   <div class="col-md-12 ">
                     <div class="section-title mb-40 pt-50 pl-50 pr-50 pb-40 hello">
                       <h4 align="center" class="pb-30">Предстоящие собеседования</h4>
-                      
-                      <div class="col-lg-12 col-md-12 col-sm-12 mr-30 pb-30">
-                        <div class="single-pricing row" align="center">
-                          <div class="image col-lg-3" align="center">
-                            <img src="assets/img/sber.png" alt="">
+                      <?php
+                      foreach($sobs as $sob){
+                      $sob->tet = R::findOne('tests','name = ?',array($sob->companyinn));
+                      echo '
+                        <div class="col-lg-12 col-md-12 col-sm-12 mr-30 pb-30">
+                          <div class="single-pricing row" align="center">
+                            <h5 class="col-lg-3 text-center pt-30 sber2">'.$sob->company.'</h5>
+                            <h4 class="col-lg-3 sber3 text-center pt-30">'.$sob->tet->prof.'</h4>
+                            <h4 class="col-lg-5 sber35 text-center pt-30"><input class="form-control" type="datetime-local" id="example-datetime-local-input" name="sob_date" value ='.$sob->date.' readonly></h4>
+                            
                           </div>
-                          <h5 class="col-lg-3 text-center pt-30 sber2">Сбербанк</h5>
-                          <h4 class="col-lg-3 sber3 text-center pt-30">Тестировщик ПО</h4>
-                          <h4 class="col-lg-3 sber35 text-center pt-30"><a  href="#0">12.05.2021 13:30 Подключиться</a></h4>
                           
-                        </div>
-                        
-                      </div>
-                      <div class="col-lg-12 col-md-12 col-sm-12 mr-30 pb-30">
-                        <div class="single-pricing row" align="center">
-                          <div class="image col-lg-3" align="center">
-                            <img src="assets/img/sber.png" alt="">
-                          </div>
-                          <h5 class="col-lg-3 text-center pt-30 sber2">Сбербанк</h5>
-                          <h4 class="col-lg-3 sber3 text-center pt-30">Тестировщик ПО</h4>
-                          <h4 class="col-lg-3 sber35 text-center pt-30"><a  href="#0">12.05.2021 13:30 Подключиться</a></h4>
-                          
-                        </div>
-                        
-                      </div>
+                        </div>'; } 
+                      ?>
                     </div>
                 </div>
               </div>
@@ -264,7 +254,7 @@ $data=$_POST;
             <div class="row align-items-center">
               <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="index.php">
+                  <a class="navbar-brand" href="index.html">
                     <img src="assets/img/logo.png" alt="" />
                   </a>
 
@@ -326,7 +316,6 @@ $data=$_POST;
                     <h5 class="colortest pt-10 pb-10"><?php echo $tt->prof;?></h5>
                     <h4 class="col-lg-12 text-center pt-30 sber1 pb-10"><a  href="userresults.php">Таблица лидеров</a></h4>
                     <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Время собеседований</a></h4>
-                    <h4 class="col-lg-12 text-center pt-30 sber1"><a  href="#0">Закрыть вакансию</a></h4>
                   </div> 
                   <?php endif;?>  
                 </div>

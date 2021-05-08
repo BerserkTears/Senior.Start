@@ -89,11 +89,10 @@
   
               <div class="contact-form-wrapper pt-50 pl-50 pr-50 pb-50" id="cont">
               <?php 
-                $rabs = R::find('ratings','company = ?', array($_SESSION['logged_user']->inn));
-                asort($rabs,$rabs['score']);
+                $rabs = R::find('sobesedovaniya','companyinn = ?', array($_SESSION['logged_user']->inn));
                 foreach ($rabs as $rab){
-                $rab->name = R::findOne('users','id = ?',array($rab->user_id));
-                $fsob = R::findOne('sobesedovaniya', 'user = ? and companyinn = ?', [$rab->name->id,$_SESSION['logged_user']->inn]);
+                $rab->name = R::findOne('users','id = ?',array($rab->user));
+                $rab->score = R::findOne('ratings','user_id = ? and company = ?',[$rab->user,$_SESSION['logged_user']->inn]);
                 echo '
                 <div class="q-b">
                   <div class="row">
@@ -107,19 +106,15 @@
                         <h5 class="lead text-center">Дата собеседования: 
                             
                         <form method="POST" action="userresults.php">
-                            <input type="hidden" name="user_sob" value="'.$rab->name->id.'">';
-                               if(empty($fsob)){echo '
-                                <input class="form-control" type="datetime-local" id="example-datetime-local-input" name="sob_date" value ='.$fsob->date.'>
-                                <button type="submit" class="button radius-30" name="naznachit"><h5 class="lead text-center">Назначить</h5></button>';} else {
-                                    echo '
-                                <input class="form-control" type="datetime-local" id="example-datetime-local-input" name="sob_date" value ='.$fsob->date.' readonly>';
-                                }
-                    echo'  </form>
+                            <input type="hidden" name="user_sob" value="'.$rab->name->id.'">
+
+                                <input class="form-control" type="datetime-local" id="example-datetime-local-input" name="sob_date" value ='.$rab->date.' readonly>
+                     </form>
                         </h5>
 
                     </div>
                     <div class="col-md-3 pt-10">
-                      <h5 class="lead text-center">'.$rab->score.'
+                      <h5 class="lead text-center">'.$rab->score->score.'
                         баллов</h5>
                     </div>
 
