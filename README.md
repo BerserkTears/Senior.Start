@@ -12,4 +12,4 @@ PHP<br>
 
 <h2>## Ссылки</h2>
 
-Ссылка на сайт: http://senior.sxmurxe.ru/
+Ссылка на сайт: http://senior.stockgolm.xyz/
